@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, YouTube, Globe, Code, User, MessageSquare } from 'lucide-react';
+import { BookOpen, Youtube, Globe, Code, User, MessageSquare } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -118,7 +117,7 @@ const resources: Resource[] = [
 const getIconForResourceType = (type: Resource['type']) => {
   switch (type) {
     case 'video':
-      return <YouTube className="h-5 w-5" />;
+      return <Youtube className="h-5 w-5" />;
     case 'course':
       return <BookOpen className="h-5 w-5" />;
     case 'website':
