@@ -903,11 +903,3 @@ const careerData: CareerPath[] = [
           "Publish articles or speak at conferences on HMI design",
           "Lead the design of an innovative interface project",
           "Mentor junior designers in human-centered design principles"
-        ]
-      }
-    ],
-    careerOutlook: "The demand for skilled Human-Machine Interface Designers is growing rapidly as technology becomes more advanced and pervasive. As AI, robotics, and autonomous systems become integrated into everyday life and work, the need for intuitive, safe interfaces between humans and machines will continue to increase. This career offers excellent growth prospects, particularly for designers who combine technical understanding with human-centered design principles. The field will evolve toward more natural, multimodal interactions and increasingly sophisticated personalization. Designers who understand cognitive science and can create interfaces that complement human capabilities will be especially valuable."
-  }
-];
-
-export default careerData;

@@ -13,12 +13,12 @@ import careerData from '@/data/careerData';
 // Define career categories
 const careerCategories = {
   'all': 'All Careers',
-  'future-ready': 'Future-Ready',
   'tech': 'Technology & Digital',
   'creative': 'Creative & Design',
   'science': 'Science & Research',
   'business': 'Business & Entrepreneurship',
-  'sustainability': 'Sustainability & Impact'
+  'sustainability': 'Sustainability & Impact',
+  'healthcare': 'Healthcare & Wellness'
 };
 
 // Function to categorize careers
@@ -27,25 +27,27 @@ const categorizeCareer = (career) => {
   const skills = career.requiredSkills.map(skill => skill.name.toLowerCase()).join(' ');
   const description = career.description.toLowerCase();
   
-  // Default category assignment logic (could be made more sophisticated)
-  if (title.includes('ai') || title.includes('data') || title.includes('interface') || 
-      description.includes('future') || description.includes('emerging')) {
-    return 'future-ready';
-  } else if (title.includes('tech') || title.includes('developer') || title.includes('engineer') || 
-           skills.includes('programming') || skills.includes('software')) {
-    return 'tech';
-  } else if (title.includes('climate') || title.includes('sustainability') || 
-           description.includes('environment') || description.includes('sustainable')) {
+  // Enhanced category assignment logic
+  if (title.includes('sustainability') || title.includes('climate') || 
+      description.includes('environment') || description.includes('sustainable')) {
     return 'sustainability';
   } else if (title.includes('design') || title.includes('art') || title.includes('media') || 
-           skills.includes('design') || skills.includes('creative')) {
+           title.includes('storyteller') || skills.includes('design') || skills.includes('creative')) {
     return 'creative';
-  } else if (title.includes('scientist') || title.includes('research') || 
+  } else if (title.includes('scientist') || title.includes('research') || title.includes('bioinformatics') ||
            skills.includes('research') || description.includes('laboratory')) {
     return 'science';
   } else if (title.includes('entrepreneur') || title.includes('manager') || 
-           title.includes('business') || skills.includes('leadership')) {
+           title.includes('business') || title.includes('strategist') || skills.includes('leadership')) {
     return 'business';
+  } else if (title.includes('health') || title.includes('medical') || title.includes('care') ||
+           description.includes('health') || description.includes('medical')) {
+    return 'healthcare';
+  } else if (title.includes('tech') || title.includes('developer') || title.includes('engineer') || 
+           title.includes('digital') || title.includes('data') || title.includes('cyber') ||
+           title.includes('interface') || title.includes('robotics') ||
+           skills.includes('programming') || skills.includes('software')) {
+    return 'tech';
   }
   
   return 'all'; // Default category
@@ -91,14 +93,10 @@ const Careers = () => {
     }
   };
   
-  // Group careers for display
-  const futureReadyCareers = filteredCareers.filter(career => 
-    categorizeCareer(career) === 'future-ready' || career.demandLevel === 'High'
-  );
-  
-  const otherCareers = filteredCareers.filter(career => 
-    categorizeCareer(career) !== 'future-ready' && career.demandLevel !== 'High'
-  );
+  // Group careers for display by demand level
+  const highDemandCareers = filteredCareers.filter(career => career.demandLevel === 'High');
+  const mediumDemandCareers = filteredCareers.filter(career => career.demandLevel === 'Medium');
+  const otherCareers = filteredCareers.filter(career => career.demandLevel === 'Low');
   
   return (
     <div className="min-h-screen bg-gray-50">
@@ -108,10 +106,10 @@ const Careers = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-3xl font-extrabold text-white sm:text-4xl">
-              Explore High-Income Career Paths
+              Explore Multidisciplinary Career Paths
             </h1>
             <p className="mt-3 max-w-3xl mx-auto text-xl text-blue-100">
-              Discover traditional and future-oriented careers that combine multiple disciplines to solve valuable problems
+              Discover careers that blend multiple disciplines and integrate emerging technologies to solve valuable problems
             </p>
           </div>
         </div>
@@ -136,12 +134,12 @@ const Careers = () => {
                   {Object.entries(careerCategories).map(([key, label]) => (
                     <TabsTrigger key={key} value={key} className="flex items-center whitespace-nowrap">
                       {key === 'all' && <Briefcase className="mr-1 h-4 w-4" />}
-                      {key === 'future-ready' && <Zap className="mr-1 h-4 w-4" />}
                       {key === 'tech' && <Globe className="mr-1 h-4 w-4" />}
                       {key === 'creative' && <Palette className="mr-1 h-4 w-4" />}
                       {key === 'science' && <Microscope className="mr-1 h-4 w-4" />}
                       {key === 'business' && <Briefcase className="mr-1 h-4 w-4" />}
                       {key === 'sustainability' && <Globe className="mr-1 h-4 w-4" />}
+                      {key === 'healthcare' && <Zap className="mr-1 h-4 w-4" />}
                       {label}
                     </TabsTrigger>
                   ))}
@@ -158,17 +156,34 @@ const Careers = () => {
           </div>
         ) : (
           <div>
-            {futureReadyCareers.length > 0 && (
+            {highDemandCareers.length > 0 && (
               <div className="mb-12">
                 <div className="flex items-center gap-2 mb-4">
                   <Zap className="h-6 w-6 text-brand-purple" />
-                  <h2 className="text-xl font-bold text-gray-900">Future-Ready Career Paths</h2>
+                  <h2 className="text-xl font-bold text-gray-900">High-Demand Careers</h2>
                 </div>
                 <p className="text-gray-600 mb-6">
-                  These multidisciplinary careers combine emerging technologies with traditional fields and are positioned for growth in the coming decade.
+                  These multidisciplinary careers are expected to see significant growth in the coming decade, offering excellent opportunities for those with the right skills.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {futureReadyCareers.map(career => (
+                  {highDemandCareers.map(career => (
+                    <CareerCard key={career.id} career={career} />
+                  ))}
+                </div>
+              </div>
+            )}
+            
+            {mediumDemandCareers.length > 0 && (
+              <div className="mb-12">
+                <div className="flex items-center gap-2 mb-4">
+                  <Brain className="h-6 w-6 text-brand-blue" />
+                  <h2 className="text-xl font-bold text-gray-900">Growing Career Opportunities</h2>
+                </div>
+                <p className="text-gray-600 mb-6">
+                  These careers combine multiple disciplines and are poised for steady growth as industries evolve and adopt new technologies.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {mediumDemandCareers.map(career => (
                     <CareerCard key={career.id} career={career} />
                   ))}
                 </div>
@@ -179,7 +194,7 @@ const Careers = () => {
               <div className="mb-12">
                 <div className="flex items-center gap-2 mb-4">
                   <Briefcase className="h-6 w-6 text-brand-blue" />
-                  <h2 className="text-xl font-bold text-gray-900">Additional Career Opportunities</h2>
+                  <h2 className="text-xl font-bold text-gray-900">Additional Career Paths</h2>
                 </div>
                 <p className="text-gray-600 mb-6">
                   Explore these established career paths that offer solid income potential and meaningful work across various industries.
@@ -198,10 +213,10 @@ const Careers = () => {
       <div className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-2xl font-bold text-gray-900">Preparing for Future Careers</h2>
+            <h2 className="text-2xl font-bold text-gray-900">Preparing for Multidisciplinary Careers</h2>
             <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
               The most valuable careers of the next decade will blend multiple disciplines with technological fluency.
-              Focus on building adaptable skills and a growth mindset.
+              Focus on building adaptable skills and a growth mindset to thrive in rapidly evolving fields.
             </p>
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               <div className="bg-blue-50 p-6 rounded-lg">
