@@ -903,3 +903,11 @@ const careerData: CareerPath[] = [
           "Publish articles or speak at conferences on HMI design",
           "Lead the design of an innovative interface project",
           "Mentor junior designers in human-centered design principles"
+        ]
+      }
+    ],
+    careerOutlook: "The demand for HMI Designers is growing rapidly as technology becomes more complex and ubiquitous. Organizations increasingly recognize that the success of advanced technological systems depends on how effectively humans can interact with them. This field offers opportunities across industries from healthcare to automotive, aerospace to consumer electronics. As emerging technologies like AR/VR, voice interfaces, and brain-computer interfaces mature, specialists who can design intuitive, accessible interfaces will be in high demand. The convergence of AI and human factors creates particularly exciting career opportunities for those who can bridge technical capabilities with human needs and limitations."
+  }
+];
+
+export default careerData;
