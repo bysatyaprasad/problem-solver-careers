@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Search, Filter } from 'lucide-react';
+import { Search, Filter, Zap, Brain, Globe } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -43,7 +43,7 @@ const Careers = () => {
               Explore High-Income Career Paths
             </h1>
             <p className="mt-3 max-w-2xl mx-auto text-xl text-blue-100">
-              Discover careers that solve valuable problems and follow detailed roadmaps to get there
+              Discover traditional and future-oriented careers that solve valuable problems
             </p>
           </div>
         </div>
@@ -76,10 +76,21 @@ const Careers = () => {
             <p className="mt-2 text-gray-600">Try a different search term</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredCareers.map(career => (
-              <CareerCard key={career.id} career={career} />
-            ))}
+          <div>
+            <div className="mb-8">
+              <div className="flex items-center gap-2 mb-4">
+                <Zap className="h-6 w-6 text-brand-purple" />
+                <h2 className="text-xl font-bold text-gray-900">Future-Ready Career Paths</h2>
+              </div>
+              <p className="text-gray-600 mb-6">
+                These multidisciplinary careers combine emerging technologies with traditional fields and are positioned for growth in the coming decade.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredCareers.map(career => (
+                <CareerCard key={career.id} career={career} />
+              ))}
+            </div>
           </div>
         )}
       </div>
@@ -87,14 +98,37 @@ const Careers = () => {
       <div className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-2xl font-bold text-gray-900">Looking for Something Specific?</h2>
+            <h2 className="text-2xl font-bold text-gray-900">Preparing for Future Careers</h2>
             <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-              We're constantly adding new career paths and roadmaps. If you don't see what you're looking for,
-              check back soon or explore our resources page for additional guidance.
+              The most valuable careers of the next decade will blend multiple disciplines with technological fluency.
+              Focus on building adaptable skills and a growth mindset.
             </p>
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              <div className="bg-blue-50 p-6 rounded-lg">
+                <Brain className="h-8 w-8 text-blue-600 mx-auto mb-3" />
+                <h3 className="font-medium text-lg mb-2">Multidisciplinary Thinking</h3>
+                <p className="text-sm text-gray-700">
+                  Combine knowledge from different fields to solve complex problems. The most innovative solutions often emerge at the intersection of disciplines.
+                </p>
+              </div>
+              <div className="bg-purple-50 p-6 rounded-lg">
+                <Globe className="h-8 w-8 text-purple-600 mx-auto mb-3" />
+                <h3 className="font-medium text-lg mb-2">Technological Fluency</h3>
+                <p className="text-sm text-gray-700">
+                  Develop comfort with emerging technologies. You don't need to master everything, but understanding how AI, automation, and digital tools work is essential.
+                </p>
+              </div>
+              <div className="bg-green-50 p-6 rounded-lg">
+                <Zap className="h-8 w-8 text-green-600 mx-auto mb-3" />
+                <h3 className="font-medium text-lg mb-2">Adaptability</h3>
+                <p className="text-sm text-gray-700">
+                  Build the ability to learn continuously and pivot as industries evolve. The specific skills needed may change, but adaptability remains constant.
+                </p>
+              </div>
+            </div>
             <div className="mt-8">
               <Link to="/resources">
-                <Button>View Resources</Button>
+                <Button>View Learning Resources</Button>
               </Link>
             </div>
           </div>
