@@ -23,16 +23,25 @@ export interface RoadmapStep {
   milestones: string[];
 }
 
+export interface SalaryProspect {
+  trend: 'Rising' | 'Stable' | 'Variable';
+  entryLevelRange: string;
+  midLevelRange: string;
+  seniorLevelRange: string;
+  notes: string;
+}
+
 export interface CareerPath {
   id: string;
   title: string;
   description: string;
   problemsSolved: string[];
-  salaryRange: {
+  salaryRange?: {
     entry: number;
     mid: number;
     senior: number;
   };
+  salaryProspect: SalaryProspect;
   demandLevel: 'High' | 'Medium' | 'Low';
   requiredSkills: Skill[];
   roadmap: RoadmapStep[];
@@ -51,10 +60,12 @@ const careerData: CareerPath[] = [
       "Detecting fraud and anomalies in large datasets",
       "Automating decision-making processes using machine learning"
     ],
-    salaryRange: {
-      entry: 500000,
-      mid: 1200000, 
-      senior: 2500000
+    salaryProspect: {
+      trend: "Rising",
+      entryLevelRange: "₹5-10 LPA",
+      midLevelRange: "₹12-20 LPA",
+      seniorLevelRange: "₹20-40+ LPA",
+      notes: "Salaries vary widely by industry, with finance and tech typically paying more. Specialists in NLP or computer vision often command premium compensation."
     },
     demandLevel: "High",
     requiredSkills: [
@@ -269,10 +280,12 @@ const careerData: CareerPath[] = [
       "Ensuring AI compliance with emerging regulations and standards",
       "Bridging communication between technical teams and stakeholders about ethical implications"
     ],
-    salaryRange: {
-      entry: 800000,
-      mid: 1500000,
-      senior: 2800000
+    salaryProspect: {
+      trend: "Rising",
+      entryLevelRange: "₹8-12 LPA",
+      midLevelRange: "₹15-25 LPA",
+      seniorLevelRange: "₹25-45+ LPA",
+      notes: "This emerging field has widely variable compensation. Policy roles may pay less than technical roles, but offer greater stability and impact potential."
     },
     demandLevel: "High",
     requiredSkills: [
@@ -485,10 +498,12 @@ const careerData: CareerPath[] = [
       "Designing climate-resilient infrastructure and systems",
       "Pioneering carbon capture and utilization technologies"
     ],
-    salaryRange: {
-      entry: 600000,
-      mid: 1500000,
-      senior: 4000000
+    salaryProspect: {
+      trend: "Variable",
+      entryLevelRange: "₹6-12 LPA (initial)",
+      midLevelRange: "₹15-30 LPA (growth stage)",
+      seniorLevelRange: "₹30-100+ LPA (established)",
+      notes: "Income varies dramatically by venture success. Initial years may see below-market compensation offset by equity. Successful ventures can generate significant wealth through exits."
     },
     demandLevel: "High",
     requiredSkills: [
@@ -702,10 +717,12 @@ const careerData: CareerPath[] = [
       "Ensuring safety and preventing errors in human-machine collaborations",
       "Bridging the gap between cutting-edge technology and everyday users"
     ],
-    salaryRange: {
-      entry: 700000,
-      mid: 1400000,
-      senior: 2800000
+    salaryProspect: {
+      trend: "Rising",
+      entryLevelRange: "₹7-12 LPA",
+      midLevelRange: "₹12-22 LPA",
+      seniorLevelRange: "₹25-45+ LPA",
+      notes: "Specialists in emerging interaction paradigms like brain-computer interfaces or AR/VR command premium salaries. Healthcare and automotive sectors often pay more due to safety-critical requirements."
     },
     demandLevel: "High",
     requiredSkills: [
@@ -878,36 +895,4 @@ const careerData: CareerPath[] = [
         resources: [
           {
             title: "The Future of Brain-Computer Interfaces",
-            url: "https://www.nature.com/articles/s41587-019-0234-8",
-            type: "Website",
-            free: false,
-            description: "Research on emerging neural interface technologies"
-          },
-          {
-            title: "Ethics in Design and Communication",
-            url: "https://www.bloomsbury.com/us/ethics-in-design-and-communication-9781350077027/",
-            type: "Book",
-            free: false,
-            description: "Ethical considerations in interface design"
-          },
-          {
-            title: "Advanced Human-Computer Interaction",
-            url: "https://www.udemy.com/course/advanced-human-computer-interaction/",
-            type: "Course",
-            free: false,
-            description: "Cutting-edge HCI topics and research"
-          }
-        ],
-        milestones: [
-          "Specialize in interfaces for a specific industry (healthcare, manufacturing, etc.)",
-          "Publish articles or speak at conferences on HMI design",
-          "Lead the design of an innovative interface project",
-          "Mentor junior designers in human-centered design principles"
-        ]
-      }
-    ],
-    careerOutlook: "The demand for HMI Designers continues to grow as technology becomes more complex and integrated into daily life. With the rise of AI, robotics, and autonomous systems, experts who can create intuitive interfaces between humans and machines are increasingly valuable. The field is evolving to embrace multimodal interactions, accessibility, and ethical design considerations. As technology advances, HMI Designers will play a crucial role in ensuring that innovations are usable, inclusive, and beneficial for all users."
-  }
-];
-
-export default careerData;
+            url: "https://www.nature.com/articles/s415

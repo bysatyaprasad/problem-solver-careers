@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, TrendingUp, BookOpen, Clock, CheckCircle, ExternalLink } from 'lucide-react';
+import { ArrowLeft, TrendingUp, BookOpen, Clock, CheckCircle, ExternalLink, ArrowUpDown, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -9,7 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Separator } from '@/components/ui/separator';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
-import careerData, { CareerPath, SkillLevel, ResourceLink } from '@/data/careerData';
+import careerData, { CareerPath, SkillLevel, ResourceLink, SalaryProspect } from '@/data/careerData';
 
 const SkillBadge = ({ level }: { level: SkillLevel }) => {
   const colors = {
@@ -20,6 +20,52 @@ const SkillBadge = ({ level }: { level: SkillLevel }) => {
   
   return (
     <Badge className={colors[level]} variant="outline">{level}</Badge>
+  );
+};
+
+const SalaryIndicator = ({ salaryProspect }: { salaryProspect: SalaryProspect }) => {
+  const trendColors = {
+    'Rising': 'text-green-600',
+    'Stable': 'text-blue-600',
+    'Variable': 'text-purple-600'
+  };
+  
+  const trendIcons = {
+    'Rising': <ChevronUp className="h-4 w-4 inline-block" />,
+    'Stable': <ArrowLeft className="h-4 w-4 inline-block" />,
+    'Variable': <ArrowUpDown className="h-4 w-4 inline-block" />
+  };
+  
+  return (
+    <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+      <div className="flex justify-between items-center mb-3">
+        <h3 className="font-medium text-gray-900">Salary Prospects</h3>
+        <span className={`flex items-center font-medium ${trendColors[salaryProspect.trend]}`}>
+          {trendIcons[salaryProspect.trend]} {salaryProspect.trend}
+        </span>
+      </div>
+      
+      <div className="space-y-2">
+        <div className="flex justify-between text-sm">
+          <span className="text-gray-600">Entry Level:</span>
+          <span className="font-medium">{salaryProspect.entryLevelRange}</span>
+        </div>
+        <div className="flex justify-between text-sm">
+          <span className="text-gray-600">Mid Level:</span>
+          <span className="font-medium">{salaryProspect.midLevelRange}</span>
+        </div>
+        <div className="flex justify-between text-sm">
+          <span className="text-gray-600">Senior Level:</span>
+          <span className="font-medium text-brand-purple">{salaryProspect.seniorLevelRange}</span>
+        </div>
+      </div>
+      
+      {salaryProspect.notes && (
+        <div className="mt-3 pt-3 border-t border-gray-200">
+          <p className="text-xs text-gray-600 italic">{salaryProspect.notes}</p>
+        </div>
+      )}
+    </div>
   );
 };
 
@@ -84,14 +130,6 @@ const CareerDetail = () => {
     );
   }
   
-  const formatSalary = (amount: number): string => {
-    if (amount >= 100000) {
-      return `₹${(amount / 100000).toFixed(1)}L`;
-    } else {
-      return `₹${(amount / 1000).toFixed(0)}K`;
-    }
-  };
-  
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="mb-6">
@@ -115,10 +153,6 @@ const CareerDetail = () => {
                 <TrendingUp className="mr-1 h-4 w-4" /> 
                 {career.demandLevel} Demand
               </Badge>
-              <div className="text-sm font-medium">
-                Salary Range: 
-                <span className="ml-2 text-brand-purple">{formatSalary(career.salaryRange.entry)} - {formatSalary(career.salaryRange.senior)}</span>
-              </div>
             </div>
           </div>
           
@@ -240,7 +274,9 @@ const CareerDetail = () => {
         </div>
         
         <div>
-          <Card>
+          <SalaryIndicator salaryProspect={career.salaryProspect} />
+          
+          <Card className="mt-6">
             <CardHeader>
               <CardTitle>Required Skills</CardTitle>
               <CardDescription>Key competencies for success as a {career.title}</CardDescription>

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, TrendingUp, Users } from 'lucide-react';
+import { ArrowUpRight, TrendingUp, ChevronUp, ArrowLeft, ArrowUpDown } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -11,14 +11,6 @@ interface CareerCardProps {
   career: CareerPath;
 }
 
-const formatSalary = (amount: number): string => {
-  if (amount >= 100000) {
-    return `₹${(amount / 100000).toFixed(1)}L`;
-  } else {
-    return `₹${(amount / 1000).toFixed(0)}K`;
-  }
-};
-
 const CareerCard: React.FC<CareerCardProps> = ({ career }) => {
   const getDemandColor = (level: 'High' | 'Medium' | 'Low') => {
     switch (level) {
@@ -26,6 +18,15 @@ const CareerCard: React.FC<CareerCardProps> = ({ career }) => {
       case 'Medium': return 'bg-yellow-100 text-yellow-800';
       case 'Low': return 'bg-red-100 text-red-800';
       default: return 'bg-gray-100 text-gray-800';
+    }
+  };
+  
+  const getTrendIcon = (trend: 'Rising' | 'Stable' | 'Variable') => {
+    switch (trend) {
+      case 'Rising': return <ChevronUp className="ml-1 h-3 w-3" />;
+      case 'Stable': return <ArrowLeft className="ml-1 h-3 w-3" />;
+      case 'Variable': return <ArrowUpDown className="ml-1 h-3 w-3" />;
+      default: return null;
     }
   };
 
@@ -45,11 +46,17 @@ const CareerCard: React.FC<CareerCardProps> = ({ career }) => {
       <CardContent>
         <div className="space-y-4">
           <div>
-            <h4 className="text-sm font-medium text-gray-500 mb-1">Salary Range</h4>
+            <h4 className="text-sm font-medium text-gray-500 mb-1">Salary Prospects</h4>
             <div className="flex items-center justify-between">
-              <span className="text-gray-600 text-sm">Entry: {formatSalary(career.salaryRange.entry)}</span>
-              <span className="text-gray-700 font-medium">Mid: {formatSalary(career.salaryRange.mid)}</span>
-              <span className="text-brand-purple font-semibold">Senior: {formatSalary(career.salaryRange.senior)}</span>
+              <span className="text-gray-600 text-sm">Trend:</span>
+              <span className="text-brand-purple font-medium flex items-center">
+                {career.salaryProspect.trend}
+                {getTrendIcon(career.salaryProspect.trend)}
+              </span>
+            </div>
+            <div className="flex items-center justify-between mt-1">
+              <span className="text-gray-600 text-sm">Senior Level:</span>
+              <span className="text-brand-purple font-semibold">{career.salaryProspect.seniorLevelRange}</span>
             </div>
           </div>
           
