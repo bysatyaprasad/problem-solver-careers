@@ -895,4 +895,57 @@ const careerData: CareerPath[] = [
         resources: [
           {
             title: "The Future of Brain-Computer Interfaces",
-            url: "https://www.nature.com/articles/s415
+            url: "https://www.nature.com/articles/s41587-019-0234-8",
+            type: "Website",
+            free: false,
+            description: "Research on emerging neural interface technologies"
+          },
+          {
+            title: "Brain-Computer Interface Design",
+            url: "https://www.coursera.org/specializations/brain-computer-interface",
+            type: "Course",
+            free: false,
+            description: "Designing interfaces for brain-computer interfaces"
+          },
+          {
+            title: "Haptic Feedback Systems",
+            url: "https://www.coursera.org/specializations/haptic-feedback",
+            type: "Course",
+            free: false,
+            description: "Designing interfaces with haptic feedback"
+          },
+          {
+            title: "Mixed Reality Design",
+            url: "https://www.coursera.org/specializations/mixed-reality",
+            type: "Course",
+            free: false,
+            description: "Designing interfaces for mixed reality environments"
+          },
+          {
+            title: "Ethical Interface Design",
+            url: "https://www.coursera.org/specializations/ethical-interface-design",
+            type: "Course",
+            free: false,
+            description: "Designing interfaces with ethical considerations"
+          },
+          {
+            title: "Predictive Interface Systems",
+            url: "https://www.coursera.org/specializations/predictive-interface-systems",
+            type: "Course",
+            free: false,
+            description: "Designing interfaces with predictive capabilities"
+          }
+        ],
+        milestones: [
+          "Mentor junior HMI designers",
+          "Speak at HMI conferences or meetups",
+          "Lead complex HMI projects",
+          "Become a subject matter expert in a specific domain"
+        ]
+      }
+    ],
+    careerOutlook: "The demand for Human-Machine Interface Designers is growing as more complex technological systems are developed. With the increasing use of AI and robotics, there is a need for designers who can create intuitive and accessible interfaces that ensure safety and user satisfaction. Professionals who can bridge the gap between cutting-edge technology and everyday users will be highly sought after. This career path offers the opportunity to work on innovative projects and contribute to the development of new technologies."
+  }
+];
+
+export default careerData;
