@@ -36,11 +36,13 @@ const CareerCard: React.FC<CareerCardProps> = ({ career }) => {
         <div className="flex justify-between items-start">
           <CardTitle className="text-xl font-bold">{career.title}</CardTitle>
           <Badge className={getDemandColor(career.demandLevel)} variant="outline">
-            {career.demandLevel} Demand <TrendingUp className="ml-1 h-3 w-3" />
+            {career.demandLevel} Demand {getTrendIcon(career.demandLevel === 'High' ? 'Rising' : career.demandLevel === 'Medium' ? 'Stable' : 'Variable')}
           </Badge>
         </div>
         <CardDescription className="mt-2 text-sm text-gray-500">
-          {career.description}
+          {career.description.length > 180 
+            ? `${career.description.substring(0, 180)}...` 
+            : career.description}
         </CardDescription>
       </CardHeader>
       <CardContent>
