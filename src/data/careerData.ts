@@ -895,22 +895,4 @@ const careerData: CareerPath[] = [
         resources: [
           {
             title: "The Future of Brain-Computer Interfaces",
-            url: "https://www.nature.com/articles/s41746-023-00838-2",
-            type: "Website",
-            free: true,
-            description: "Comprehensive overview of emerging brain-computer interface technologies and their potential applications"
-          }
-        ],
-        milestones: [
-          "Mentor junior HMI designers",
-          "Lead projects on complex AI or robotic interfaces",
-          "Publish research papers on interface design",
-          "Develop a portfolio of innovative HMI solutions"
-        ]
-      }
-    ],
-    careerOutlook: "The demand for Human-Machine Interface Designers is growing as technology continues to evolve and become more complex. With the increasing use of AI and robotics in various industries, there is a growing need for designers who can create intuitive and accessible interfaces that ensure safe and effective human-machine interactions. As the field continues to grow, professionals who can stay up-to-date with emerging technologies and design principles will be in high demand."
-  }
-];
-
-export default careerData;
+            url: "https://www.nature.com/articles/s
