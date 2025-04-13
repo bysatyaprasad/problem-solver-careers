@@ -912,3 +912,5 @@ const careerData: CareerPath[] = [
     careerOutlook: "The demand for Human-Machine Interface Designers is growing as technology continues to evolve and become more complex. With the increasing use of AI and robotics in various industries, there is a growing need for designers who can create intuitive and accessible interfaces that ensure safe and effective human-machine interactions. As the field continues to grow, professionals who can stay up-to-date with emerging technologies and design principles will be in high demand."
   }
 ];
+
+export default careerData;
