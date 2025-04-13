@@ -895,4 +895,4 @@ const careerData: CareerPath[] = [
         resources: [
           {
             title: "The Future of Brain-Computer Interfaces",
-            url: "https://www.nature.com/articles/s415
+            url: "https://www.nature.com/articles/s
