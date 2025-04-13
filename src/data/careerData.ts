@@ -48,7 +48,7 @@ export interface CareerPath {
   careerOutlook: string;
 }
 
-const careerData: CareerPath[] = [
+export const careerData: CareerPath[] = [
   {
     id: "data-scientist",
     title: "Data Scientist",

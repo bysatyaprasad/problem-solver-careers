@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, TrendingUp, BookOpen, Clock, CheckCircle, ExternalLink, ArrowUpDown, ChevronUp } from 'lucide-react';
@@ -9,7 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Separator } from '@/components/ui/separator';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
-import careerData, { CareerPath, SkillLevel, ResourceLink, SalaryProspect } from '@/data/careerData';
+import { careerData, CareerPath, SkillLevel, ResourceLink, SalaryProspect } from '@/data/careerData';
 
 const SkillBadge = ({ level }: { level: SkillLevel }) => {
   const colors = {
