@@ -903,3 +903,11 @@ const careerData: CareerPath[] = [
           "Publish articles or speak at conferences on HMI design",
           "Lead the design of an innovative interface project",
           "Mentor junior designers in human-centered design principles"
+        ]
+      }
+    ],
+    careerOutlook: "The demand for HMI Designers continues to grow as technology becomes more complex and integrated into daily life. With the rise of AI, robotics, and autonomous systems, experts who can create intuitive interfaces between humans and machines are increasingly valuable. The field is evolving to embrace multimodal interactions, accessibility, and ethical design considerations. As technology advances, HMI Designers will play a crucial role in ensuring that innovations are usable, inclusive, and beneficial for all users."
+  }
+];
+
+export default careerData;
