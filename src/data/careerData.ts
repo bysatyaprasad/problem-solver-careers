@@ -49,16 +49,24 @@ export interface CareerPath {
   careerOutlook: string;
 }
 
-// Import and re-export all career paths
+// Import all career paths
 import { dataScientistCareer } from './careers/dataScientist';
 import { aiEthicsSpecialistCareer } from './careers/aiEthicsSpecialist';
 import { climateTechEntrepreneurCareer } from './careers/climateTechEntrepreneur';
 import { humanMachineInterfaceDesignerCareer } from './careers/humanMachineInterfaceDesigner';
+import { quantumComputingSpecialistCareer } from './careers/quantumComputingSpecialist';
+import { cybersecurityArchitectCareer } from './careers/cybersecurityArchitect';
+import { biomedicalEngineerCareer } from './careers/biomedicalEngineer';
+import { roboticsEngineerCareer } from './careers/roboticsEngineer';
 
 // Combine all careers into a single array
 export const careerData: CareerPath[] = [
   dataScientistCareer,
   aiEthicsSpecialistCareer,
   climateTechEntrepreneurCareer,
-  humanMachineInterfaceDesignerCareer
+  humanMachineInterfaceDesignerCareer,
+  quantumComputingSpecialistCareer,
+  cybersecurityArchitectCareer,
+  biomedicalEngineerCareer,
+  roboticsEngineerCareer
 ];
