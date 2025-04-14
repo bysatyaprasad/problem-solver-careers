@@ -58,6 +58,12 @@ import { quantumComputingSpecialistCareer } from './careers/quantumComputingSpec
 import { cybersecurityArchitectCareer } from './careers/cybersecurityArchitect';
 import { biomedicalEngineerCareer } from './careers/biomedicalEngineer';
 import { roboticsEngineerCareer } from './careers/roboticsEngineer';
+import { blockchainDeveloperCareer } from './careers/blockchainDeveloper';
+import { aiPromptEngineerCareer } from './careers/aiPromptEngineer';
+import { dataPrivacyOfficerCareer } from './careers/dataPrivacyOfficer';
+import { bioinformaticianCareer } from './careers/bioinformatician';
+import { augmentedRealityDeveloperCareer } from './careers/augmentedRealityDeveloper';
+import { sustainableDesignerCareer } from './careers/sustainableDesigner';
 
 // Combine all careers into a single array
 export const careerData: CareerPath[] = [
@@ -68,5 +74,11 @@ export const careerData: CareerPath[] = [
   quantumComputingSpecialistCareer,
   cybersecurityArchitectCareer,
   biomedicalEngineerCareer,
-  roboticsEngineerCareer
+  roboticsEngineerCareer,
+  blockchainDeveloperCareer,
+  aiPromptEngineerCareer,
+  dataPrivacyOfficerCareer,
+  bioinformaticianCareer,
+  augmentedRealityDeveloperCareer,
+  sustainableDesignerCareer
 ];
