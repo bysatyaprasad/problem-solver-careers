@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Careers from "./pages/Careers";
 import CareerDetails from "./pages/CareerDetails";
-import Resources from "./pages/Resources";
+import ResourcesPage from "./pages/ResourcesPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,7 +22,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/careers/:id" element={<CareerDetails />} />
-          <Route path="/resources" element={<Resources />} />
+          <Route path="/resources" element={<ResourcesPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
