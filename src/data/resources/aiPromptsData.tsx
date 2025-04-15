@@ -15,7 +15,11 @@ import {
   User,
   BookOpen,
   ArrowRightLeft,
-  Languages
+  Languages,
+  Calculator,
+  Code,
+  HeartPulse,
+  GraduationCap
 } from 'lucide-react';
 
 export type AIPromptCategory = {
@@ -61,6 +65,14 @@ export const aiPromptCategories: AIPromptCategory[] = [
       {
         prompt: "What are common misconceptions about [topic] that might confuse me?",
         explanation: "Identifies and clarifies potential points of confusion before they happen."
+      },
+      {
+        prompt: "If [concept] were a story, how would you narrate it from beginning to end?",
+        explanation: "Transforms abstract concepts into a narrative format that's easier to follow and remember."
+      },
+      {
+        prompt: "Explain how [concept] applies in three different real-world scenarios.",
+        explanation: "Helps bridge theoretical understanding with practical applications in various contexts."
       }
     ]
   },
@@ -96,6 +108,18 @@ export const aiPromptCategories: AIPromptCategory[] = [
       {
         prompt: "Turn these notes into a structured study guide with headings, bullet points, and examples: [your notes]",
         explanation: "Transforms rough notes into an organized learning resource."
+      },
+      {
+        prompt: "Create a series of practice quiz questions that gradually increase in difficulty for [topic].",
+        explanation: "Provides progressive challenge levels to test and strengthen your understanding."
+      },
+      {
+        prompt: "Generate a glossary of technical terms for [field] with clear, concise definitions.",
+        explanation: "Creates a reference tool for quickly understanding specialized terminology."
+      },
+      {
+        prompt: "Create an exam preparation checklist for [subject], including key topics and resource recommendations.",
+        explanation: "Helps organize your study approach with a comprehensive preparation plan."
       }
     ]
   },
@@ -131,6 +155,14 @@ export const aiPromptCategories: AIPromptCategory[] = [
       {
         prompt: "Design a challenging project that will require me to apply everything I've learned about [topic].",
         explanation: "Provides a comprehensive way to integrate and demonstrate multiple skills."
+      },
+      {
+        prompt: "Create a debugging challenge where I need to find and fix errors in this [code/solution]: [example with errors]",
+        explanation: "Develops error-detection skills essential for mastery in technical subjects."
+      },
+      {
+        prompt: "Generate open-ended discussion questions about [topic] that require deep critical thinking.",
+        explanation: "Provides prompts for reflection that develop higher-order thinking skills."
       }
     ]
   },
@@ -166,6 +198,14 @@ export const aiPromptCategories: AIPromptCategory[] = [
       {
         prompt: "I want to master [skill] in [timeframe]. Create a realistic roadmap with progressive milestones and how to assess my progress.",
         explanation: "Builds a long-term strategy with clear checkpoints to keep you on track."
+      },
+      {
+        prompt: "Design a weekend intensive learning plan for [topic] that maximizes retention and practical application.",
+        explanation: "Creates a compressed but effective approach for limited time periods."
+      },
+      {
+        prompt: "How can I structure a group study session for [subject] that benefits everyone's learning?",
+        explanation: "Provides collaborative learning strategies that enhance understanding through peer interaction."
       }
     ]
   },
@@ -201,6 +241,14 @@ export const aiPromptCategories: AIPromptCategory[] = [
       {
         prompt: "Generate a list of stretch goals I could add to my [project type] to demonstrate advanced skills.",
         explanation: "Provides options to extend your project once the core functionality is complete."
+      },
+      {
+        prompt: "Design a project that would solve a real problem in [industry/field] while showcasing [technical skill].",
+        explanation: "Creates a practically valuable project that demonstrates capability in addressing actual needs."
+      },
+      {
+        prompt: "What documentation should I create alongside my [project type] to showcase my thought process?",
+        explanation: "Helps create supporting materials that highlight your reasoning and approach."
       }
     ]
   },
@@ -236,6 +284,14 @@ export const aiPromptCategories: AIPromptCategory[] = [
       {
         prompt: "Create a research question framework for exploring [topic] from multiple perspectives.",
         explanation: "Provides a structured approach to investigate a subject comprehensively."
+      },
+      {
+        prompt: "What methodologies are most appropriate for researching [topic], and what are their strengths/limitations?",
+        explanation: "Helps select the right research approach and understand its implications."
+      },
+      {
+        prompt: "Analyze the credibility of this source: [citation/link] for research on [topic].",
+        explanation: "Assists in evaluating information quality for more reliable research outcomes."
       }
     ]
   },
@@ -271,6 +327,14 @@ export const aiPromptCategories: AIPromptCategory[] = [
       {
         prompt: "What skills or knowledge areas complement [primary skill] and would make me more well-rounded?",
         explanation: "Identifies related competencies that enhance your main area of expertise."
+      },
+      {
+        prompt: "Create a feedback form I can use to get structured input from others on my [skill/project].",
+        explanation: "Develops a tool for gathering meaningful external perspectives on your work."
+      },
+      {
+        prompt: "What are industry-standard benchmarks for proficiency in [skill] at entry, mid, and senior levels?",
+        explanation: "Provides professional reference points to contextualize your skill development."
       }
     ]
   },
@@ -306,6 +370,14 @@ export const aiPromptCategories: AIPromptCategory[] = [
       {
         prompt: "I get anxious when attempting [challenging skill]. How can I reduce this stress while still making progress?",
         explanation: "Offers mindset shifts and practical techniques to manage learning-related anxiety."
+      },
+      {
+        prompt: "I'm experiencing burnout while studying [subject]. How can I recover while maintaining progress?",
+        explanation: "Provides recovery strategies that don't sacrifice learning momentum."
+      },
+      {
+        prompt: "How can I overcome the frustration of repeated failures when learning [difficult skill]?",
+        explanation: "Offers psychological approaches to develop resilience and persistence."
       }
     ]
   },
@@ -333,6 +405,18 @@ export const aiPromptCategories: AIPromptCategory[] = [
       {
         prompt: "How can I use music or rhythm to help memorize [information] for [subject]?",
         explanation: "Suggests ways to leverage musical patterns for enhanced memory and recall."
+      },
+      {
+        prompt: "Create a fictional scenario where I need to use [skill/knowledge] to solve a mystery or challenge.",
+        explanation: "Develops an immersive context that makes abstract knowledge more concrete and memorable."
+      },
+      {
+        prompt: "How can I use physical movement or gestures to help remember and understand [concept]?",
+        explanation: "Incorporates bodily kinesthetic approaches to enhance learning through movement."
+      },
+      {
+        prompt: "Design a role-playing exercise where I can practice and apply my knowledge of [subject].",
+        explanation: "Creates an immersive scenario for experiential learning and skill application."
       }
     ]
   },
@@ -360,6 +444,18 @@ export const aiPromptCategories: AIPromptCategory[] = [
       {
         prompt: "How can I translate my academic knowledge of [subject] into practical workplace applications?",
         explanation: "Bridges the gap between theoretical understanding and professional implementation."
+      },
+      {
+        prompt: "Create a 60-second elevator pitch about my expertise in [skill/field] for networking events.",
+        explanation: "Develops a concise, impactful way to communicate your value to professional connections."
+      },
+      {
+        prompt: "What industry-specific terminology should I master to sound knowledgeable about [field] in interviews?",
+        explanation: "Identifies key professional language that demonstrates insider knowledge."
+      },
+      {
+        prompt: "How can I position my self-taught knowledge of [subject] as valuable despite not having formal credentials?",
+        explanation: "Provides strategies for showcasing non-traditional learning paths effectively."
       }
     ]
   },
@@ -387,6 +483,18 @@ export const aiPromptCategories: AIPromptCategory[] = [
       {
         prompt: "What cognitive frameworks from [field] could be applied to improve learning in [unrelated subject]?",
         explanation: "Transfers useful thinking tools between different domains of knowledge."
+      },
+      {
+        prompt: "How has [concept] from [field A] influenced developments in [field B] historically?",
+        explanation: "Explores the cross-pollination of ideas between disciplines over time."
+      },
+      {
+        prompt: "What unique career opportunities exist at the intersection of [field A] and [field B]?",
+        explanation: "Identifies niche professional paths that leverage interdisciplinary knowledge."
+      },
+      {
+        prompt: "How would an expert in [field A] approach and solve this problem in [field B]?",
+        explanation: "Applies perspective-shifting to generate novel approaches to challenges."
       }
     ]
   },
@@ -414,6 +522,18 @@ export const aiPromptCategories: AIPromptCategory[] = [
       {
         prompt: "What AI tools besides ChatGPT could help me learn [subject] more effectively?",
         explanation: "Expands your toolkit with specialized AI assistants for specific learning needs."
+      },
+      {
+        prompt: "Compare these learning platforms: [platform A, B, and C] for studying [subject]. Which would be best for my needs?",
+        explanation: "Provides personalized recommendations based on comparative analysis of learning resources."
+      },
+      {
+        prompt: "How can I use APIs or data sources to create real-world practice exercises for [technical skill]?",
+        explanation: "Suggests authentic learning opportunities using actual data and systems."
+      },
+      {
+        prompt: "What digital organization system would work best for managing resources and notes across multiple subjects?",
+        explanation: "Provides knowledge management architecture for comprehensive learning activities."
       }
     ]
   },
@@ -441,6 +561,18 @@ export const aiPromptCategories: AIPromptCategory[] = [
       {
         prompt: "How can I convert my knowledge of [subject] into an engaging presentation or workshop?",
         explanation: "Transforms information into an interactive learning experience for others."
+      },
+      {
+        prompt: "Create a step-by-step tutorial for teaching a beginner how to [perform skill/task].",
+        explanation: "Structures procedural knowledge in a learner-friendly sequence."
+      },
+      {
+        prompt: "How can I assess whether someone has truly understood [concept] after I've explained it?",
+        explanation: "Provides verification techniques to confirm successful knowledge transfer."
+      },
+      {
+        prompt: "What storytelling elements could I use to make a lesson on [topic] more memorable and engaging?",
+        explanation: "Incorporates narrative techniques to enhance listener retention and interest."
       }
     ]
   },
@@ -468,7 +600,163 @@ export const aiPromptCategories: AIPromptCategory[] = [
       {
         prompt: "Design a daily 20-minute routine that balances all four language skills (reading, writing, speaking, listening) for [language].",
         explanation: "Creates a balanced, time-efficient practice schedule for holistic language development."
+      },
+      {
+        prompt: "Create a list of cognates between English and [language] to give me an instant vocabulary boost.",
+        explanation: "Identifies words with shared origins that are easy to recognize and remember."
+      },
+      {
+        prompt: "What are the most common everyday phrases I should master first in [language]?",
+        explanation: "Prioritizes high-frequency expressions for immediate practical communication."
+      },
+      {
+        prompt: "Design shadowing exercises for improving my accent and pronunciation in [language].",
+        explanation: "Creates practice activities for developing authentic-sounding speech patterns."
+      },
+      {
+        prompt: "How can I use music, movies, or TV shows effectively to improve my [language] skills?",
+        explanation: "Suggests entertainment-based immersion strategies for enjoyable language acquisition."
       }
     ]
   },
+  {
+    title: "Math & Quantitative Skills",
+    icon: <Calculator className="h-6 w-6 text-red-500" />,
+    description: "Specific approaches for mastering mathematical concepts and quantitative reasoning.",
+    prompts: [
+      {
+        prompt: "Explain the intuition behind [mathematical concept] without using formulas first, then show how the formulas represent that intuition.",
+        explanation: "Builds conceptual understanding before introducing symbolic representations."
+      },
+      {
+        prompt: "Create a series of increasingly complex problems to help me master [mathematical technique].",
+        explanation: "Provides scaffolded practice that gradually builds computational skill."
+      },
+      {
+        prompt: "What real-world situations would I use [mathematical concept] to model or solve?",
+        explanation: "Connects abstract mathematics to concrete applications for enhanced relevance."
+      },
+      {
+        prompt: "Create a visual representation or diagram that explains how [mathematical process] works.",
+        explanation: "Translates numerical or symbolic concepts into visual form for spatial learners."
+      },
+      {
+        prompt: "What are common mistakes or misconceptions when learning [mathematical topic], and how can I avoid them?",
+        explanation: "Identifies cognitive pitfalls specific to mathematical reasoning."
+      },
+      {
+        prompt: "Create analogies that would help explain [mathematical concept] to someone with math anxiety.",
+        explanation: "Provides accessible entry points for understanding complex quantitative ideas."
+      },
+      {
+        prompt: "Design a progression of learning activities that would take me from understanding [basic concept] to mastering [advanced concept].",
+        explanation: "Creates a structured path through related mathematical knowledge."
+      }
+    ]
+  },
+  {
+    title: "Coding & Technical Skills",
+    icon: <Code className="h-6 w-6 text-emerald-500" />,
+    description: "Methods for effectively learning programming and other technical capabilities.",
+    prompts: [
+      {
+        prompt: "Create a series of mini-projects that would help me practice [programming concept] in [language], starting with the simplest possible example.",
+        explanation: "Provides hands-on application opportunities with increasing complexity."
+      },
+      {
+        prompt: "Explain how [technical concept] works under the hood, then show practical code examples of using it.",
+        explanation: "Connects theoretical understanding with practical implementation."
+      },
+      {
+        prompt: "What are the most common bugs or errors when implementing [technical feature], and how can I avoid them?",
+        explanation: "Helps anticipate and prevent common technical pitfalls."
+      },
+      {
+        prompt: "Create a cheat sheet of the most useful [language/framework] methods and patterns for [specific task].",
+        explanation: "Provides a reference guide for frequently-needed technical solutions."
+      },
+      {
+        prompt: "Design a code review checklist I can use when practicing [programming language/paradigm].",
+        explanation: "Creates a quality assurance tool for self-assessment of technical work."
+      },
+      {
+        prompt: "What mental models should I develop to think effectively about [programming concept]?",
+        explanation: "Suggests conceptual frameworks that facilitate technical reasoning."
+      },
+      {
+        prompt: "Create analogies that explain [technical concept] in non-technical terms before diving into the code.",
+        explanation: "Builds intuitive understanding before introducing technical specifics."
+      }
+    ]
+  },
+  {
+    title: "Physical & Practical Skills",
+    icon: <HeartPulse className="h-6 w-6 text-pink-500" />,
+    description: "Approaches for mastering physical abilities and hands-on capabilities.",
+    prompts: [
+      {
+        prompt: "Break down the proper form for [physical skill/movement] into clear steps, with common mistakes to avoid.",
+        explanation: "Provides technical guidance for physical execution with error prevention."
+      },
+      {
+        prompt: "Design a progression of practice drills for [physical skill] that isolate different components before combining them.",
+        explanation: "Creates a structured approach to building component skills before integration."
+      },
+      {
+        prompt: "What mental cues or visualizations can help me execute [physical movement] correctly?",
+        explanation: "Provides cognitive frameworks that support proper physical execution."
+      },
+      {
+        prompt: "Create a training plan for [physical skill] that includes appropriate rest and recovery to prevent plateaus and injuries.",
+        explanation: "Designs a sustainable approach to physical skill development."
+      },
+      {
+        prompt: "What supplementary exercises would help me develop the specific strength/flexibility/coordination needed for [physical skill]?",
+        explanation: "Identifies targeted physical preparation for skill-specific requirements."
+      },
+      {
+        prompt: "How can I use video analysis effectively to improve my [physical skill]?",
+        explanation: "Provides a methodology for visual self-assessment and correction."
+      },
+      {
+        prompt: "What are appropriate milestones and realistic timelines for progressing from beginner to advanced in [physical skill]?",
+        explanation: "Sets reasonable expectations for physical skill development trajectory."
+      }
+    ]
+  },
+  {
+    title: "Academic Writing & Research",
+    icon: <GraduationCap className="h-6 w-6 text-blue-700" />,
+    description: "Techniques for producing scholarly work and conducting effective research.",
+    prompts: [
+      {
+        prompt: "Help me develop a thesis statement for a paper about [topic] that is specific, arguable, and significant.",
+        explanation: "Assists in creating a focused central argument for academic writing."
+      },
+      {
+        prompt: "Create an outline for a research paper on [topic] with appropriate sections and key points to address in each.",
+        explanation: "Provides structural organization for comprehensive academic treatment of a subject."
+      },
+      {
+        prompt: "Generate research questions about [topic] at different levels: descriptive, comparative, and causal/theoretical.",
+        explanation: "Develops inquiry frameworks with increasing analytical sophistication."
+      },
+      {
+        prompt: "What would be effective counterarguments to address in a paper arguing that [position]?",
+        explanation: "Identifies opposing viewpoints to strengthen scholarly argumentation."
+      },
+      {
+        prompt: "How can I strengthen the analytical components of my paper on [topic] to move beyond description?",
+        explanation: "Provides strategies for enhancing critical thinking in academic writing."
+      },
+      {
+        prompt: "Help me design a literature review strategy for researching [topic], including search terms and approaches to synthesizing sources.",
+        explanation: "Creates a methodical approach to surveying existing scholarship."
+      },
+      {
+        prompt: "Create strategies for effectively incorporating evidence from [type of sources] into my arguments about [topic].",
+        explanation: "Develops techniques for integrating research materials into scholarly writing."
+      }
+    ]
+  }
 ];

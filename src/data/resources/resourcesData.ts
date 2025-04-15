@@ -1,4 +1,3 @@
-
 import { Resource } from '@/components/resources/ResourceCard';
 
 export const resources: Resource[] = [
@@ -186,7 +185,6 @@ export const resources: Resource[] = [
     tags: ["beginner programming", "visual coding", "education"],
     free: true
   },
-  // New resources start here
   {
     title: "Datacamp",
     description: "Interactive learning platform focusing on data science, analytics, and programming through hands-on exercises.",
@@ -196,115 +194,251 @@ export const resources: Resource[] = [
     free: false
   },
   {
-    title: "Scrimba",
-    description: "Interactive coding platform that lets you code along with instructors in a real interactive environment.",
-    url: "https://scrimba.com/",
-    type: "course",
-    tags: ["web development", "interactive learning", "frontend"],
-    free: true
-  },
-  {
-    title: "Frontend Mentor",
-    description: "Platform that provides real-world projects to improve your front-end coding skills by building real projects.",
-    url: "https://www.frontendmentor.io/",
-    type: "community",
-    tags: ["web development", "design", "challenges", "portfolio"],
-    free: true
-  },
-  {
-    title: "The Odin Project",
-    description: "Free, comprehensive curriculum to learn full-stack web development with a project-based approach.",
-    url: "https://www.theodinproject.com/",
-    type: "course",
-    tags: ["web development", "open source", "project-based"],
+    title: "Huberman Lab Podcast",
+    description: "Science-based podcast by Stanford neuroscientist Andrew Huberman on learning, memory, and brain optimization techniques.",
+    url: "https://hubermanlab.com/",
+    type: "website",
+    tags: ["neuroscience", "learning science", "habit formation", "brain optimization"],
     free: true
   },
   {
     title: "Exercism",
-    description: "Platform offering code practice and mentorship to improve programming skills through solving challenges.",
+    description: "Improve your programming skills with practice problems and mentorship in over 50 languages.",
     url: "https://exercism.org/",
     type: "community",
-    tags: ["coding practice", "mentorship", "problem solving"],
+    tags: ["programming practice", "mentorship", "coding challenges"],
     free: true
   },
   {
-    title: "Google Digital Garage",
-    description: "Free online courses on digital marketing, career development, and digital skills from Google.",
-    url: "https://learndigital.withgoogle.com/digitalgarage",
-    type: "course",
-    tags: ["digital marketing", "career development", "Google certification"],
-    free: true
-  },
-  {
-    title: "Harvard CS50",
-    description: "Introduction to computer science from Harvard University, available for free on edX.",
-    url: "https://cs50.harvard.edu/",
-    type: "course",
-    tags: ["computer science", "programming", "university level"],
-    free: true
-  },
-  {
-    title: "Feynman Technique Videos",
-    description: "Collection of videos explaining how to use the Feynman Technique for learning complex subjects.",
-    url: "https://www.youtube.com/results?search_query=feynman+technique",
-    type: "video",
-    tags: ["learning techniques", "knowledge retention", "teaching"],
-    free: true
-  },
-  {
-    title: "Draw.io",
-    description: "Free online diagram software for making flowcharts, process diagrams, UML, ER diagrams, and more.",
-    url: "https://draw.io/",
+    title: "Readwise",
+    description: "Tool that helps you remember what you read by surfacing your highlights from books, articles, and more.",
+    url: "https://readwise.io/",
     type: "tool",
-    tags: ["diagramming", "visual learning", "conceptual mapping"],
-    free: true
+    tags: ["reading", "knowledge management", "spaced repetition"],
+    free: false
   },
   {
-    title: "Open AI Cookbook",
-    description: "Collection of examples and guides for using the OpenAI API for various applications and tasks.",
-    url: "https://cookbook.openai.com/",
-    type: "website",
-    tags: ["AI development", "prompt engineering", "API usage"],
-    free: true
-  },
-  {
-    title: "Practical Deep Learning for Coders",
-    description: "Course by fast.ai teaching deep learning from a practical, code-first approach.",
-    url: "https://course.fast.ai/",
+    title: "SkillShare",
+    description: "Online learning community with thousands of classes in design, business, tech, and creative skills.",
+    url: "https://www.skillshare.com/",
     type: "course",
-    tags: ["deep learning", "AI", "machine learning", "practical"],
+    tags: ["creative skills", "project-based learning", "design"],
+    free: false
+  },
+  {
+    title: "Roam Research",
+    description: "Note-taking tool for networked thought that helps connect ideas and create knowledge graphs.",
+    url: "https://roamresearch.com/",
+    type: "tool",
+    tags: ["note-taking", "knowledge management", "connected thinking"],
+    free: false
+  },
+  {
+    title: "The Feynman Technique Explained",
+    description: "Comprehensive guide to mastering the famous learning method of Nobel Prize-winning physicist Richard Feynman.",
+    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    type: "video",
+    tags: ["learning techniques", "teaching", "comprehension"],
     free: true
   },
   {
-    title: "MindTools",
-    description: "Resource for leadership skills, management techniques, personal development, and productivity tools.",
-    url: "https://www.mindtools.com/",
+    title: "RemNote",
+    description: "All-in-one tool for thinking and learning that combines spaced repetition and connected notes.",
+    url: "https://www.remnote.com/",
+    type: "tool",
+    tags: ["note-taking", "spaced repetition", "knowledge management"],
+    free: true
+  },
+  {
+    title: "How to Read a Book",
+    description: "Classic guide by Mortimer Adler teaching analytical reading techniques for extracting maximum value from texts.",
+    url: "https://www.amazon.com/How-Read-Book-Classic-Intelligent/dp/0671212095",
     type: "website",
-    tags: ["soft skills", "leadership", "personal development"],
+    tags: ["reading techniques", "critical thinking", "learning methodology"],
+    free: false
+  },
+  {
+    title: "Pomodoro Timer Apps",
+    description: "Collection of the best Pomodoro technique apps for focused work sessions and effective time management.",
+    url: "https://pomofocus.io/",
+    type: "tool",
+    tags: ["productivity", "time management", "focus"],
+    free: true
+  },
+  {
+    title: "Future Learn",
+    description: "Online courses from top universities and cultural institutions worldwide with social learning approach.",
+    url: "https://www.futurelearn.com/",
+    type: "course",
+    tags: ["university courses", "social learning", "global education"],
+    free: true
+  },
+  {
+    title: "Zettelkasten Method Guide",
+    description: "Comprehensive explanation of the powerful note-taking and knowledge management system used by prolific thinkers.",
+    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    type: "video",
+    tags: ["note-taking", "knowledge management", "connected thinking"],
+    free: true
+  },
+  {
+    title: "Coursera - Learning How to Learn",
+    description: "Science-based course on how to learn effectively, taught by Dr. Barbara Oakley and Dr. Terrence Sejnowski.",
+    url: "https://www.coursera.org/learn/learning-how-to-learn",
+    type: "course",
+    tags: ["learning science", "memory techniques", "productivity"],
+    free: true
+  },
+  {
+    title: "Mathigon",
+    description: "Interactive mathematics education platform with visual explanations and active learning experiences.",
+    url: "https://mathigon.org/",
+    type: "website",
+    tags: ["mathematics", "interactive learning", "visualization"],
+    free: true
+  },
+  {
+    title: "Flowkey",
+    description: "App for learning piano with real-time feedback, extensive song library, and personalized lessons.",
+    url: "https://www.flowkey.com/",
+    type: "tool",
+    tags: ["music learning", "piano", "skill practice"],
     free: false
   },
   {
     title: "Replit",
-    description: "Browser-based IDE for coding in 50+ languages without setting up a local environment.",
+    description: "Browser-based coding environment for real-time collaboration and learning to code without setup.",
     url: "https://replit.com/",
     type: "tool",
-    tags: ["coding environment", "collaboration", "learning"],
+    tags: ["coding environment", "programming practice", "collaboration"],
+    free: true
+  },
+  {
+    title: "MIT OpenCourseWare",
+    description: "Free access to MIT course materials from world-class professors across disciplines.",
+    url: "https://ocw.mit.edu/",
+    type: "course",
+    tags: ["university courses", "technical education", "comprehensive"],
+    free: true
+  },
+  {
+    title: "Crash Course YouTube Channel",
+    description: "Educational video series covering subjects from science to history in an engaging, accessible format.",
+    url: "https://www.youtube.com/user/crashcourse",
+    type: "video",
+    tags: ["educational videos", "multiple subjects", "engaging explanations"],
+    free: true
+  },
+  {
+    title: "Mimo",
+    description: "Mobile app for learning to code on the go with bite-sized coding exercises and projects.",
+    url: "https://getmimo.com/",
+    type: "tool",
+    tags: ["mobile learning", "coding", "programming practice"],
+    free: false
+  },
+  {
+    title: "3Blue1Brown",
+    description: "YouTube channel offering visual, intuitive explanations of mathematical concepts through stunning animations.",
+    url: "https://www.youtube.com/c/3blue1brown",
+    type: "video",
+    tags: ["mathematics", "visual learning", "conceptual understanding"],
+    free: true
+  },
+  {
+    title: "Practical Psychology",
+    description: "YouTube channel covering psychological principles, memory techniques, and practical learning strategies.",
+    url: "https://www.youtube.com/channel/UCir93b_ftqInEaDpsWYbo_g",
+    type: "video",
+    tags: ["psychology", "memory techniques", "practical skills"],
+    free: true
+  },
+  {
+    title: "Scrimba",
+    description: "Interactive coding platform where you can edit the instructor's code directly while watching tutorials.",
+    url: "https://scrimba.com/",
+    type: "course",
+    tags: ["interactive coding", "web development", "hands-on learning"],
+    free: true
+  },
+  {
+    title: "Mnemosyne Project",
+    description: "Open-source spaced repetition software for optimizing memorization and long-term knowledge retention.",
+    url: "https://mnemosyne-proj.org/",
+    type: "tool",
+    tags: ["spaced repetition", "memorization", "knowledge retention"],
+    free: true
+  },
+  {
+    title: "Brilliant.org",
+    description: "Problem-solving based courses in math, science, and computer science with interactive challenges.",
+    url: "https://brilliant.org/",
+    type: "course",
+    tags: ["problem-solving", "interactive learning", "stem education"],
+    free: false
+  },
+  {
+    title: "MyNoise",
+    description: "Customizable background noise generator to create optimal sound environments for studying and focus.",
+    url: "https://mynoise.net/",
+    type: "tool",
+    tags: ["focus", "productivity", "study environment"],
     free: true
   },
   {
     title: "Obsidian",
-    description: "Knowledge base and note-taking app that works on local Markdown files and helps build a personal knowledge graph.",
+    description: "Knowledge base that works on local Markdown files for creating your personal knowledge management system.",
     url: "https://obsidian.md/",
     type: "tool",
-    tags: ["note-taking", "knowledge management", "personal wiki"],
+    tags: ["note-taking", "knowledge management", "connected thinking"],
     free: true
   },
   {
-    title: "Quillbot",
-    description: "AI-powered paraphrasing tool to improve writing and help with content creation.",
-    url: "https://quillbot.com/",
+    title: "Forest App",
+    description: "Stay focused by planting virtual trees that grow while you work and wither if you leave the app.",
+    url: "https://www.forestapp.cc/",
     type: "tool",
-    tags: ["writing", "AI assistant", "content creation"],
+    tags: ["focus", "productivity", "gamification"],
+    free: false
+  },
+  {
+    title: "Blinkist",
+    description: "App that provides key insights from nonfiction books in 15-minute summaries for efficient learning.",
+    url: "https://www.blinkist.com/",
+    type: "tool",
+    tags: ["book summaries", "efficient learning", "knowledge acquisition"],
+    free: false
+  },
+  {
+    title: "The Odin Project",
+    description: "Free, open source coding curriculum focusing on web development through project-based learning.",
+    url: "https://www.theodinproject.com/",
+    type: "course",
+    tags: ["web development", "project-based", "full-stack"],
+    free: true
+  },
+  {
+    title: "Zapier",
+    description: "Automation tool to connect apps and streamline workflows for more efficient learning and productivity.",
+    url: "https://zapier.com/",
+    type: "tool",
+    tags: ["automation", "productivity", "workflow optimization"],
+    free: true
+  },
+  {
+    title: "Coda.io",
+    description: "All-in-one doc that brings together documents, spreadsheets, and databases for learning projects.",
+    url: "https://coda.io/",
+    type: "tool",
+    tags: ["project management", "documentation", "collaboration"],
+    free: true
+  },
+  {
+    title: "Harvard CS50",
+    description: "Harvard University's introduction to computer science and programming, available for free online.",
+    url: "https://cs50.harvard.edu/",
+    type: "course",
+    tags: ["computer science", "programming fundamentals", "comprehensive"],
     free: true
   }
 ];
